@@ -7,7 +7,12 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-app.use(cors());
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 const PORT = process.env.PORT || 5000; // Port for Express server
 
 app.get('/', (_req: Request, res: Response) => {

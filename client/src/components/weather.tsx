@@ -9,7 +9,7 @@ const Weather: React.FC = () => {
 
   const fetchWeather = async () => {
     try {
-      const response = await axios.get(`${"http://localhost:5000"}/weather?city=${city}`);
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/weather?city=${city}`);
       setWeatherData(response.data);
     } catch (error) {
       console.error('Error fetching weather:', error);
