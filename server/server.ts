@@ -1,5 +1,5 @@
-import * as express from "express";
-import * as cors from "cors";
+import express from "express";
+import cors from "cors";
 import { Request, Response } from "express";
 import axios from "axios";
 import * as dotenv from 'dotenv';
