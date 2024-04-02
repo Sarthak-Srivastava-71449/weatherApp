@@ -10,7 +10,10 @@ const app = express();
 app.use(cors());
 const PORT = process.env.PORT || 5000; // Port for Express server
 
-// Define a route to proxy weather requests
+app.get('/', (_req: Request, res: Response) => {
+  return res.send('Weather app using Typescript on Vercel')
+})
+
 app.get("/weather", async (req: Request, res: Response) => {
   try {
     const { city } = req.query;
